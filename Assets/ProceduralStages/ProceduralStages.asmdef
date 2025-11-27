@@ -30,7 +30,11 @@
         "Rewired_Core.dll",
         "RoRGauntlet.dll",
         "AK.Wwise.Unity.MonoBehaviour.dll",
-        "AK.Wwise.Unity.API.WwiseTypes.dll"
+        "AK.Wwise.Unity.API.WwiseTypes.dll",
+        "Unity.Burst.dll",
+        "Unity.Collections.dll",
+        "Unity.Burst.Unsafe.dll",
+        "Unity.Mathematics.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],

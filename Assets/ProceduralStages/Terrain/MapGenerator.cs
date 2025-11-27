@@ -140,7 +140,7 @@ namespace ProceduralStages
                 int stageClearCount = RunConfig.instance.nextStageClearCount;
                 int stageInLoop = Application.isEditor
                     ? editorStageInLoop
-                    : (stageClearCount % Run.stagesPerLoop) + 1;
+                    : (stageClearCount % 5) + 1;
 
                 int stageScaling = RunConfig.instance.infiniteMapScaling
                     ? stageClearCount + 1
@@ -171,9 +171,9 @@ namespace ProceduralStages
                     WeightedSelection<TerrainType> filteredSelection = new WeightedSelection<TerrainType>(typesWeights.Count);
                     WeightedSelection<TerrainType> allSelection = new WeightedSelection<TerrainType>(typesWeights.Count);
 
-                    int loopIndex = stageClearCount / Run.stagesPerLoop;
+                    int loopIndex = stageClearCount / 5;
                     TerrainType[] terrainTypesVisitedInLoop = RunConfig.instance.terrainTypeVisits
-                        .Where(x => (x.stageCount - 1) / Run.stagesPerLoop == loopIndex)
+                        .Where(x => (x.stageCount - 1) / 5 == loopIndex)
                         .Select(x => x.terrainType)
                         .ToArray();
 
@@ -348,7 +348,7 @@ namespace ProceduralStages
 
                 SceneDirector sceneDirector = directorObject.GetComponent<SceneDirector>();
 
-                bool useLunarPortal = stageInLoop == Run.stagesPerLoop;
+                bool useLunarPortal = stageInLoop == 5;
                 string portalPath = useLunarPortal
                     ? "RoR2/Base/Teleporters/iscLunarTeleporter.asset"
                     : "RoR2/Base/Teleporters/iscTeleporter.asset";

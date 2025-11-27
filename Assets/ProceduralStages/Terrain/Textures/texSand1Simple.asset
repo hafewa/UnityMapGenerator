@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bae08a0b55152d428631c5b95418987, type: 3}
   m_Name: texSand1Simple
   m_EditorClassIdentifier: 
-  textureAsset: RoR2/Base/goolake/texSand1Simple.png
+  textureAsset: RoR2/GlobalContent/texSand1Simple.png
   normalAsset: 
   bias: 0
   averageColor: {r: 0.63529414, g: 0.5411765, b: 0.40000004, a: 0}

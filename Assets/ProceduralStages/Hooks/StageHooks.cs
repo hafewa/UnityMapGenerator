@@ -59,7 +59,7 @@ namespace ProceduralStages
                 return ContentProvider.ItSceneDef.sceneDefIndex;
             }
 
-            return ContentProvider.LoopSceneDefs[Math.Max(0, Run.instance.stageClearCount) % Run.stagesPerLoop].sceneDefIndex;
+            return ContentProvider.LoopSceneDefs[Math.Max(0, Run.instance?.stageClearCount ?? 0) % 5].sceneDefIndex;
         }
 
         private static void SceneDirector_PlacePlayerSpawnsViaNodegraph(On.RoR2.SceneDirector.orig_PlacePlayerSpawnsViaNodegraph orig, SceneDirector self)
@@ -107,7 +107,7 @@ namespace ProceduralStages
                 return;
             }
 
-            int stageIndexInLoop = nextStageIndex % Run.stagesPerLoop;
+            int stageIndexInLoop = nextStageIndex % 5;
 
             float totalPercent = RunConfig.instance.terrainTypesPercents
                 .Where(x => x.StageIndex == stageIndexInLoop)
@@ -138,7 +138,7 @@ namespace ProceduralStages
                     && SceneCatalog.currentSceneDef.cachedName == "bazaar"
                     && Run.instance.stageClearCount < 11)
                 {
-                    int stageIndex = (Run.instance.stageClearCount / 2) % Run.stagesPerLoop;
+                    int stageIndex = (Run.instance.stageClearCount / 2) % 5;
 
                     if (stageIndex < RunConfig.instance.minStageCount)
                     {
@@ -158,9 +158,9 @@ namespace ProceduralStages
                     {
                         Run.instance.nextStageScene = ContentProvider.ItSceneDef;
 
-                        int loopIndex = (stageIndex - 1) / Run.stagesPerLoop;
+                        int loopIndex = (stageIndex - 1) / 5;
                         TerrainType[] terrainTypesVisitedInLoop = RunConfig.instance.terrainTypeVisits
-                            .Where(x => (x.stageCount - 1) / Run.stagesPerLoop == loopIndex)
+                            .Where(x => (x.stageCount - 1) / 5 == loopIndex)
                             .Select(x => x.terrainType)
                             .ToArray();
 

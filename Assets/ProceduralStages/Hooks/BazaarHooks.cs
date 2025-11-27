@@ -112,7 +112,7 @@ namespace ProceduralStages
             {
                 if (targetScene.cachedName == Main.SceneName)
                 {
-                    int stageIndex = Math.Max(0, Run.instance.stageClearCount) % Run.stagesPerLoop;
+                    int stageIndex = Math.Max(0, Run.instance.stageClearCount) % 5;
 
                     var typesWeights = RunConfig.instance.terrainTypesPercents
                         .Where(x => x.StageIndex == stageIndex)
@@ -121,9 +121,9 @@ namespace ProceduralStages
                     WeightedSelection<TerrainType> filteredSelection = new WeightedSelection<TerrainType>(typesWeights.Count);
                     WeightedSelection<TerrainType> allSelection = new WeightedSelection<TerrainType>(typesWeights.Count);
 
-                    int loopIndex = (stageIndex - 1) / Run.stagesPerLoop;
+                    int loopIndex = (stageIndex - 1) / 5;
                     TerrainType[] terrainTypesVisitedInLoop = RunConfig.instance.terrainTypeVisits
-                        .Where(x => (x.stageCount - 1) / Run.stagesPerLoop == loopIndex)
+                        .Where(x => (x.stageCount - 1) / 5 == loopIndex)
                         .Select(x => x.terrainType)
                         .ToArray();
 

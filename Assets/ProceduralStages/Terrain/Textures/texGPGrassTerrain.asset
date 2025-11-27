@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bae08a0b55152d428631c5b95418987, type: 3}
   m_Name: texGPGrassTerrain
   m_EditorClassIdentifier: 
-  textureAsset: RoR2/Base/golemplains/texGPGrassTerrain.png
-  normalAsset: RoR2/Base/golemplains/texGPGrassTerrainNormal.png
+  textureAsset: RoR2/GlobalContent/texGPGrassTerrain.png
+  normalAsset: RoR2/GlobalContent/texGPGrassTerrainNormal.png
   bias: 0
   averageColor: {r: 0.36862746, g: 0.34901962, b: 0.1254902, a: 0}
   scale: 0.05

@@ -575,6 +575,7 @@ Transform:
   - {fileID: 1318512244}
   - {fileID: 963849589}
   - {fileID: 900740247}
+  - {fileID: 2032349338}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1421,7 +1422,12 @@ MonoBehaviour:
   eliteBias: 2
   spawnDistanceMultiplier: 6
   teleporterInstance: {fileID: 0}
+  monsterSpawnTargetOverride: {fileID: 0}
   lumerianEgg:
+    spawnCardReference:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
     spawnCard: {fileID: 0}
     selectionWeight: 0
     spawnDistance: 0
@@ -1494,7 +1500,11 @@ MonoBehaviour:
   resetMonsterCardIfFailed: 1
   maximumNumberToSpawnBeforeSkipping: 6
   eliteBias: 1
+  increaseSpawnDistanceOnFailure: 0
   onSpawnedServer:
+    m_PersistentCalls:
+      m_Calls: []
+  onSpawnedWithDirectorServer:
     m_PersistentCalls:
       m_Calls: []
   combatSquad: {fileID: 0}
@@ -1502,8 +1512,11 @@ MonoBehaviour:
   spawnEffectPrefab: {fileID: 0}
   ignoreTeamSizeLimit: 0
   _monsterCards: {fileID: 0}
+  _backupMonsterCards: {fileID: 0}
   fallBackToStageMonsterCards: 1
+  ActiveEliteDefOverride: {fileID: 0}
   currentSpawnTarget: {fileID: 0}
+  _customPlacementBase: {fileID: 0}
 --- !u!114 &1466132696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1540,7 +1553,11 @@ MonoBehaviour:
   resetMonsterCardIfFailed: 1
   maximumNumberToSpawnBeforeSkipping: 6
   eliteBias: 1
+  increaseSpawnDistanceOnFailure: 0
   onSpawnedServer:
+    m_PersistentCalls:
+      m_Calls: []
+  onSpawnedWithDirectorServer:
     m_PersistentCalls:
       m_Calls: []
   combatSquad: {fileID: 0}
@@ -1548,8 +1565,11 @@ MonoBehaviour:
   spawnEffectPrefab: {fileID: 0}
   ignoreTeamSizeLimit: 0
   _monsterCards: {fileID: 0}
+  _backupMonsterCards: {fileID: 0}
   fallBackToStageMonsterCards: 1
+  ActiveEliteDefOverride: {fileID: 0}
   currentSpawnTarget: {fileID: 0}
+  _customPlacementBase: {fileID: 0}
 --- !u!114 &1466132697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2042,6 +2062,72 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1924290974}
   m_Mesh: {fileID: 0}
+--- !u!1 &2032349337
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2032349338}
+  - component: {fileID: 2032349339}
+  - component: {fileID: 2032349340}
+  m_Layer: 0
+  m_Name: Console
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2032349338
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032349337}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 454570142}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2032349339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032349337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1002753072, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2032349340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032349337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 803833746, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  networkManagerPrefab: {fileID: 0}
+  platformManagerPrefab: {fileID: 0}
+  networkSessionPrefab: {fileID: 0}
+  pauseStopController: {fileID: 0}
+  postProcessSettingsController: {fileID: 447697557}
+  mainCanvas: {fileID: 0}
+  saveIconImage: {fileID: 0}
+  BehavioursToEnableDuringStartup: []
+  KCSUpdateFPS: 15
 --- !u!1001 &3250390103848843453
 PrefabInstance:
   m_ObjectHideFlags: 0

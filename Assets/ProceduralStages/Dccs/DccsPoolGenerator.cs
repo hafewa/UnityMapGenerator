@@ -33,7 +33,7 @@ namespace ProceduralStages
             int stageCleared = RunConfig.instance.nextStageClearCount;
             int currentStageInLoop = Application.isEditor
                 ? MapGenerator.instance.editorStageInLoop
-                : (stageCleared % Run.stagesPerLoop) + 1;
+                : (stageCleared % 5) + 1;
 
             var validPools = DccsPoolItem.All
                 .Where(x => x.StageType == StageType.Regular)

@@ -248,7 +248,7 @@ namespace ProceduralStages
                 }
             }
 
-            for (int stageIndex = 0; stageIndex < Run.stagesPerLoop; stageIndex++)
+            for (int stageIndex = 0; stageIndex < 5; stageIndex++)
             {
                 int startIndex = TerrainTypesPercents.Count;
                 float totalPercent = 0;

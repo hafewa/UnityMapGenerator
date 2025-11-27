@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: R2API Submodule Installer
   m_EditorClassIdentifier: 
   enabled: 1
-  serializeSelectionIntoJson: 1
+  serializeSelectionIntoJson: 0
   r2apiSubmodules:
   - submoduleName: R2API_Core
     description: Core R2API module
@@ -120,6 +120,16 @@ MonoBehaviour:
     dependedncyID: RiskofThunder-R2API_ArtifactCode
     shouldInstall: 1
     isHardDependency: 1
+    dependencies:
+    - BepInExPack
+    - HookGenPatcher
+    - R2API_Core
+  - submoduleName: R2API_CharacterBody
+    description: 'API for adding various stuff to Character Body such as: Modded
+      Body Flags'
+    dependedncyID: RiskofThunder-R2API_CharacterBody
+    shouldInstall: 1
+    isHardDependency: 0
     dependencies:
     - BepInExPack
     - HookGenPatcher
@@ -199,6 +209,15 @@ MonoBehaviour:
     - HookGenPatcher
     - R2API_Core
     - R2API_ContentManagement
+  - submoduleName: R2API_Execute
+    description: API for manipulating Execute Threshold
+    dependedncyID: RiskofThunder-R2API_Execute
+    shouldInstall: 1
+    isHardDependency: 0
+    dependencies:
+    - BepInExPack
+    - HookGenPatcher
+    - R2API_Core
   - submoduleName: R2API_Items
     description: API for adding custom items
     dependedncyID: RiskofThunder-R2API_Items
@@ -306,7 +325,7 @@ MonoBehaviour:
     description: API for skills
     dependedncyID: RiskofThunder-R2API_Skills
     shouldInstall: 1
-    isHardDependency: 0
+    isHardDependency: 1
     dependencies:
     - BepInExPack
     - HookGenPatcher
@@ -345,6 +364,15 @@ MonoBehaviour:
     dependedncyID: RiskofThunder-R2API_StringSerializerExtensions
     shouldInstall: 1
     isHardDependency: 1
+    dependencies:
+    - BepInExPack
+    - HookGenPatcher
+    - R2API_Core
+  - submoduleName: R2API_Teams
+    description: API for registering and handling custom teams
+    dependedncyID: RiskofThunder-R2API_Teams
+    shouldInstall: 1
+    isHardDependency: 0
     dependencies:
     - BepInExPack
     - HookGenPatcher

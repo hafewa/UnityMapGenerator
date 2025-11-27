@@ -1,5 +1,4 @@
-﻿using R2API;
-using RoR2;
+﻿using RoR2;
 using RoR2.ContentManagement;
 using System;
 using System.Collections;

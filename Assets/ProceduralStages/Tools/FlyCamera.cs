@@ -32,7 +32,7 @@ namespace ProceduralStages
         {
             if (Application.isPlaying)
             {
-                var cameraPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Core/Main Camera.prefab").WaitForCompletion();
+                var cameraPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Core/Camera/Main Camera.prefab").WaitForCompletion();
 
                 var mainCamera = Instantiate(cameraPrefab, transform);
 
